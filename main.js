@@ -1,8 +1,14 @@
 
 const tasks = []
 
-
-
+const existingTasks = localStorage.getItem("tasks");
+if(existingTasks !== null) {
+    const existingTaskArray = JSON.parse(existingTasks);
+    for (let i = 0; i < existingTaskArray.length; i++) {
+        tasks.push(existingTaskArray[i]);
+    }
+    render(tasks);
+}
 
 function addTask() {
     const inputTextField = document.getElementById("text-add");
@@ -28,6 +34,7 @@ function render(myTasks) {
         const li = document.createElement("li");
         const itemValue = myTasks[i];
         li.textContent = itemValue;
+        taskList.appendChild(li);
     }
 }
 
