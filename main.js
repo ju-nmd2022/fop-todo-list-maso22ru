@@ -18,6 +18,7 @@ function addTask() {
     })
     saveTasks(tasks);
     render(tasks);
+    inputTextField.value = "";
 }
 
 function saveTasks(tasksToSave) {
@@ -67,7 +68,7 @@ function render(myTasks) {
         }
         
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "x";
+        deleteButton.textContent = "🗑️";
 
         deleteButton.onclick = function() {
             tasks.splice(i, 1);
@@ -88,3 +89,12 @@ function render(myTasks) {
 // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 const btn = document.getElementById("button-add");
 btn.addEventListener("click", addTask, false);
+
+// https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+const textBox = document.getElementById("text-add");
+textBox.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addTask();  
+    }
+}, false);

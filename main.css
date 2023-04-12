@@ -1,4 +1,61 @@
+body {
+    background-color: rgba(0, 162, 255, 0.421);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 .checked-text {
     text-decoration: line-through;
+    text-decoration-thickness: 16%;
     font-style: italic;
+    color: rgb(173, 172, 172);
+}
+
+.content-box {
+    background-color: rgb(255, 255, 255);
+    padding: 4%;
+    max-width: 500px;
+    border-radius: 20px;
+    margin-left: 30%;
+    margin-top: 5%;
+
+}
+
+ul > * {
+    color: rgb(0, 0, 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    padding: 3%;
+}
+
+.add-button {
+    color: black;
+    background-color: rgb(52, 227, 119);
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.text-box {
+    height: 22px;
+    width: 400px;
+}
+
+.todo-heading {
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 4%;
+}
+
+/*https://stackoverflow.com/a/45890842*/
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
